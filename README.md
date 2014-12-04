@@ -19,6 +19,8 @@ git clone git://github.com/cakephp/access_kit.git AccessKit
 
 ### Enable plugin
 * In 2.x you need to enable the plugin at `app/Config/bootstrap.php` file, using `CakePlugin::loadAll();` or `CakePlugin::loadAll('AccessKit');`
+
+in AppController:
 ```php
 class AppController extends Controller {
 	public $components = array(
@@ -36,7 +38,7 @@ class AppController extends Controller {
     }
 }
 ```
-At models:
+in Model:
 ```php
 class Role extends AppModel {
 	public $actsAs = array('AccessKit.Requester');
@@ -52,3 +54,4 @@ class User extends AppModel {
 		);
 }
 ```
+##feel free to contribute
