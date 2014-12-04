@@ -11,7 +11,7 @@ git submodule init
 git submodule update
 ```
 
-or in your plugin directory type
+or in your plugin directory type:
 
 ```bash
 git clone git://github.com/cakephp/access_kit.git AccessKit
