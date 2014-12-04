@@ -1,5 +1,5 @@
 # CakePHP AccessKit
-==========
+
 CakePHP Plugin: an alternative to ACL and log of CRUD operations;
 
 ##Installation
