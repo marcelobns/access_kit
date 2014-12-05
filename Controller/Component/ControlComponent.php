@@ -61,11 +61,15 @@ class ControlComponent extends Component {
         return $list;
     }
 
-    public function authorize($user_rules = array(), $controller = '', $action = '') {
+    public function authorize($user_rules=array(), $controller='', $action='', $config_mode=false) {
+        if($config_mode)
+            return true;
+
         if(!isset($_SERVER['HTTP_REFERER'])){
             $uri = split('/', $_SERVER['REQUEST_URI']);            
             $_SERVER['HTTP_REFERER'] = '//'.$_SERVER['HTTP_HOST'].'/'.$uri[1];
         }
+
         if(sizeof($user_rules)>0)
         foreach ($user_rules as $key => $value) {
             if($value['controller'] == $controller && $value['action'] == $action){
@@ -75,6 +79,7 @@ class ControlComponent extends Component {
                 return true;
             }
         }
+        
         return false;
     }
 }
