@@ -14,7 +14,7 @@ git submodule update
 or in your plugin directory type:
 
 ```bash
-git clone git://github.com/cakephp/access_kit.git AccessKit
+git clone git://github.com/marcelobns/access_kit.git AccessKit
 ```
 
 ### Enable plugin
