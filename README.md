@@ -20,9 +20,9 @@ git clone git://github.com/marcelobns/access_kit.git AccessKit
 ### Enable plugin
 In 2.x you need to enable the plugin at `app/Config/bootstrap.php` file, using `CakePlugin::loadAll();` or `CakePlugin::loadAll('AccessKit');`
 
-for create tables of plugin use the file Config/Schema/db.sql or type in app/Console
+for create tables of plugin use the file Config/Schema/db.sql or type in app
 ```shell
-	$ cake schema create --plugin AccessKit Db
+	$ Console/cake schema create --plugin AccessKit Db
 ```
 
 in AppController:
