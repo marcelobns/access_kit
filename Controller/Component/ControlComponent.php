@@ -2,8 +2,8 @@
 class ControlComponent extends Component { 
 
     public function initialize(Controller $controller) {
-        $this->controller = $controller;
-        $this->controller->Session->write('clientIp', $this->controller->request->clientIp());    
+        @$this->controller = $controller;
+        @$this->controller->Session->write('clientIp', $this->controller->request->clientIp());    
     }
 
     public function get_controllers() {
