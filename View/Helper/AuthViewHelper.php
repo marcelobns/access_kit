@@ -6,15 +6,20 @@ class AuthViewHelper extends AppHelper {
   	
   	function link($title, $url, $options = array()) {
   		$user = CakeSession::read('Auth.User');
+  		
+  		if(!isset($url['controller']))
+  			$url['controller'] = $this->request->params['controller'];
+  		
   		if(@$user['Rule'])
 		foreach ($user['Rule'] as $key => $value) {
-			if(strtolower($value['controller']) == $this->request->params['controller'] && $value['action'] == $url['action']){
+			if(strtolower($value['controller']) == strtolower($url['controller']) && 
+			   strtolower($value['action']) == strtolower($url['action'])){
 				if($value['allow']){
 					return $this->Html->link($title, $url, $options);
 				}
 				return null;
 			}
-        }
+        	}
   	}
 
   	function postLink($title, $url, $options = array(), $message = 'Are you sure you want to delete %s?') {
